@@ -21,6 +21,8 @@ public class Main {
 			api.doLogin();
 			switch (mode) {
 				default:
+				case "sound": api.setSound(parameter.equalsIgnoreCase("on")?true:false); break; 
+				case "motion": api.setMotion(parameter.equalsIgnoreCase("on")?true:false); break; 
 				case "led": api.setLed(parameter.equalsIgnoreCase("on")?true:false); break;
 			}
 			api.doLogout();

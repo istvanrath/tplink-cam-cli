@@ -106,6 +106,33 @@ public class TPLinkCameraAPI {
 		EntityUtils.consume(ledentity);
 	}
 	
+	public void setMotion(boolean on) throws ClientProtocolException, IOException {
+		// set motion
+		HttpUriRequest request = RequestBuilder.post("http://"+host+"/mdconf_set.fcgi")
+				.addParameter("token", token)
+				.addParameter("is_enable", on?"1":"0")
+				.setCharset(StandardCharsets.UTF_8)
+				.build();
+
+		HttpResponse response = client.execute(request);
+		HttpEntity entity = response.getEntity();
+		EntityUtils.consume(entity);
+	}
+	
+	public void setSound(boolean on) throws ClientProtocolException, IOException {
+		// set motion
+		HttpUriRequest request = RequestBuilder.post("http://"+host+"/SetAudioDetection.fcgi")
+				.addParameter("token", token)
+				.addParameter("adStatus", on?"1":"0")
+				.addParameter("adSensitivity", "2")
+				.setCharset(StandardCharsets.UTF_8)
+				.build();
+
+		HttpResponse response = client.execute(request);
+		HttpEntity entity = response.getEntity();
+		EntityUtils.consume(entity);
+	}
+/*	
 	private void addMagicCookies() {
 		cookieStore.addCookie(new BasicClientCookie("Token", token));
 		cookieStore.addCookie(new BasicClientCookie("StreamAccount", username));
@@ -128,4 +155,5 @@ public class TPLinkCameraAPI {
 			}
 		}
 	}
+*/
 }
