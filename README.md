@@ -1,6 +1,6 @@
 # tplink-cam-cli
 
-Java CLI control application for TP-Link IP cameras, such as the [TP-Link NC250]( (http://www.tp-link.com/us/products/details/cat-5515_TL-NC250.html).
+Java CLI control application for TP-Link IP cameras, such as the [TP-Link NC250](http://www.tp-link.com/us/products/details/cat-5515_TL-NC250.html).
 
 The primary purpose of this application is to enable remote control from smart home frameworks such as [openHAB](http://openhab.org). At the moment, it can switch the LED and motion/sound detection on and off, more to follow.
 
